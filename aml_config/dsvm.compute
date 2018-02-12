@@ -1,0 +1,7 @@
+address: 52.176.165.113
+baseDockerImage: microsoft/mmlspark:plus-0.9.9
+nativeSharedDirectory: ~/.azureml/share/
+password: AzureMlSecret=dsvm#dciborow#c2702248c3204b98bb20716c9aa33594
+sharedVolumes: true
+type: remotedocker
+username: dciborow

@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 39,
+  "id": "864572a2-afcf-496a-9627-b4e2d347d403",
+  "activities": [
+    {
+      "id": "4ca8daad-7888-466f-bb5a-fdb2ef15d0dd",
+      "name": "ratings",
+      "blocks": [
+        {
+          "id": "173538ac-89bb-4a07-92d7-6a7798394e5b",
+          "type": "Microsoft.DPrep.DataSourceBlock",
+          "arguments": {
+            "path": {
+              "target": 0,
+              "resourceDetails": [
+                {
+                  "path": "./sample_data/ml-latest-small/ratings.csv"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "8f880c5d-6a2b-447a-bc8f-282137c7804a",
+          "type": "Microsoft.DPrep.ParseDelimitedBlock",
+          "arguments": {
+            "preview": false,
+            "columnHeadersMode": 1,
+            "separator": ",",
+            "fileEncoding": 0,
+            "skipRowsMode": 0,
+            "handleQuotedLineBreaks": false
+          }
+        },
+        {
+          "id": "3d27535c-f6f4-4204-8efb-16f526ff604a",
+          "type": "Microsoft.DPrep.SetColumnTypesBlock",
+          "arguments": {
+            "columnConversion": [
+              {
+                "columnId": "movieId",
+                "typeProperty": 3,
+                "typeArguments": {}
+              },
+              {
+                "columnId": "userId",
+                "typeProperty": 3,
+                "typeArguments": {}
+              },
+              {
+                "columnId": "timestamp",
+                "typeProperty": 3,
+                "typeArguments": {}
+              },
+              {
+                "columnId": "rating",
+                "typeProperty": 3,
+                "typeArguments": {}
+              }
+            ]
+          }
+        },
+        {
+          "id": "0416614d-5a4e-43d9-8d30-15b2f235be1e",
+          "type": "Microsoft.DPrep.SampleBlock",
+          "arguments": {
+            "samples": [
+              {
+                "sampleId": "897f4181-c464-44a2-916b-5642394dc6ab",
+                "sampleRevision": "ce17ad46-77c1-45f5-b167-1d6fc4900238",
+                "sampleName": "Top 10000",
+                "sampleRunner": {
+                  "id": null,
+                  "type": 0
+                },
+                "remoteGeneratorProperties": {},
+                "sampleStrategy": 0,
+                "topArguments": {
+                  "sampleCount": 10000
+                },
+                "randomNArguments": {
+                  "sampleCount": 10000
+                },
+                "randomPercentArguments": {
+                  "probability": 0.1
+                },
+                "allowAutoGen": true,
+                "isDisabled": false
+              }
+            ],
+            "activeSample": "897f4181-c464-44a2-916b-5642394dc6ab"
+          }
+        },
+        {
+          "id": "9f4f8e1e-8346-4366-9a05-de8584bd9765",
+          "type": "Microsoft.DPrep.HandlePathColumnBlock",
+          "arguments": {
+            "pathColumnOperation": 0
+          }
+        }
+      ],
+      "inspectors": [
+        {
+          "id": "8d8dea9e-9fa7-4a4e-82ed-cec960f64a5c",
+          "type": "Microsoft.DPrep.DataQualityInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "4ca8daad-7888-466f-bb5a-fdb2ef15d0dd",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": false
+        },
+        {
+          "id": "b5fb099f-4506-46aa-a8bd-c117b0c83710",
+          "type": "Microsoft.DPrep.DataProfileInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "4ca8daad-7888-466f-bb5a-fdb2ef15d0dd",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 0,
+              "referencedStepId": "9f4f8e1e-8346-4366-9a05-de8584bd9765",
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": true
+        }
+      ]
+    }
+  ],
+  "runConfigurations": []
+}

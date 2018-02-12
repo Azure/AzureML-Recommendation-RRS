@@ -10,6 +10,7 @@ name: project_environment
 dependencies:
   - python=3.5.2
   - scikit-learn
+  - ipykernel
   - pip:
     # The API for Azure Machine Learning Model Management Service.
     # Details: https://github.com/Azure/Machine-Learning-Operationalization
