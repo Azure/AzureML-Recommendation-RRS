@@ -11,6 +11,10 @@ packages:
     artifact: "mmlspark_2.11"
     version: "0.7.91"
 
+  - group: "com.microsoft.azure"
+    artifact: "azure-cosmosdb-spark_2.2.0_2.11"
+    version: "1.0.0"
+
   # Required for SQL Server data sources.
   - group: "com.microsoft.sqlserver"
     artifact: "mssql-jdbc"
