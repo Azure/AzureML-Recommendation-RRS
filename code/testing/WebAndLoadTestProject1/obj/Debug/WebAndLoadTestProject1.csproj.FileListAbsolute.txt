@@ -1,0 +1,14 @@
+C:\Users\dciborow\Source\Repos\WebAndLoadTestProject1\WebAndLoadTestProject1\bin\Debug\WebTest1.webtest
+C:\Users\dciborow\Source\Repos\WebAndLoadTestProject1\WebAndLoadTestProject1\bin\Debug\WebAndLoadTestProject1.dll
+C:\Users\dciborow\Source\Repos\WebAndLoadTestProject1\WebAndLoadTestProject1\bin\Debug\WebAndLoadTestProject1.pdb
+C:\Users\dciborow\Source\Repos\WebAndLoadTestProject1\WebAndLoadTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.WebTestFramework.dll
+C:\Users\dciborow\Source\Repos\WebAndLoadTestProject1\WebAndLoadTestProject1\obj\Debug\WebAndLoadTestProject1.csprojResolveAssemblyReference.cache
+C:\Users\dciborow\Source\Repos\WebAndLoadTestProject1\WebAndLoadTestProject1\obj\Debug\WebAndLoadTestProject1.csproj.CoreCompileInputs.cache
+C:\Users\dciborow\Source\Repos\WebAndLoadTestProject1\WebAndLoadTestProject1\obj\Debug\WebAndLoadTestProject1.dll
+C:\Users\dciborow\Source\Repos\WebAndLoadTestProject1\WebAndLoadTestProject1\obj\Debug\WebAndLoadTestProject1.pdb
+C:\Users\dciborow\Source\Repos\WebAndLoadTestProject1\WebAndLoadTestProject1\bin\Debug\LoadTest1.loadtest
+C:\Users\dciborow\Source\Repos\WebAndLoadTestProject1\WebAndLoadTestProject1\bin\Debug\LoadTest2.loadtest
+C:\Users\dciborow\Source\Repos\WebAndLoadTestProject1\WebAndLoadTestProject1\bin\Debug\CSharp-WebTest2.webtest
+C:\Users\dciborow\Source\Repos\WebAndLoadTestProject1\WebAndLoadTestProject1\bin\Debug\urlList.csv
+C:\Users\dciborow\Source\Repos\WebAndLoadTestProject1\WebAndLoadTestProject1\bin\Debug\WebTest3.webtest
+C:\Users\dciborow\Source\Repos\WebAndLoadTestProject1\WebAndLoadTestProject1\bin\Debug\LoadTest3.loadtest
