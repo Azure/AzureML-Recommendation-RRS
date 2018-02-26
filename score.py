@@ -28,19 +28,6 @@ import os
 # init() and run() functions. Test the functions
 # before deploying the web service.
 def init():
-    from azureml.dataprep import datasource
-    df = datasource.load_datasource('ratings.dsource')
-
-    from pyspark.ml.recommendation import ALS
-    als = ALS() \
-        .setUserCol("userId") \
-        .setRatingCol("rating") \
-        .setItemCol("movieId") \
-
-    alsModel = als.fit(df)
-    global userRecs
-    userRecs = alsModel.recommendForAllUsers(10)
-
     # Query them in SQL
     import pydocumentdb.documents as documents
     import pydocumentdb.document_client as document_client
@@ -58,30 +45,7 @@ def init():
     client = document_client.DocumentClient(HOST, {'masterKey': MASTER_KEY})
     collection = client.ReadCollection(collection_link=collection_link)
 
-    # from pyspark.sql import SparkSession
-
-    # spark = SparkSession.builder.getOrCreate()
-    # userRecs = spark.read.parquet("./outputs/userrecs.parquet")
-
-    # global inputs_dc, prediction_dc
-
-    # inputs_dc = ModelDataCollector("./outputs/userrecs.parquet", identifier="inputs")
-    # prediction_dc = ModelDataCollector("./outputs/userrecs.parquet", identifier="prediction")
-
-    # from sklearn.externals import joblib
-
-    # load the model file
-    # global model
-    # model = joblib.load('model.pkl')
-
-    # inputs_dc = ModelDataCollector("model.pkl", identifier="inputs")
-    # prediction_dc = ModelDataCollector("model.pkl", identifier="prediction")
-
-
 def run(input_df):
-    # from pyspark.sql.functions import col
-
-    # pred = userRecs.filter(userRecs['userId'] > input_df.iloc[0][0])
     id = input_df.iloc[0][0]
     query = {'query': 'SELECT * FROM server s WHERE s.userId = ' + str(id)}
 
@@ -95,20 +59,7 @@ def run(input_df):
     import json
 
     return json.dumps(str(results))
-
-    # append 40 random features just like the training script does it.
-    # import numpy as np
-    # n = 40
-    # random_state = np.random.RandomState(0)
-    # n_samples, n_features = input_df.shape
-    # input_df = np.c_[input_df, random_state.randn(n_samples, n)]
-    # inputs_dc.collect(input_df)
-    #
-    # pred = model.predict(input_df)
-    # prediction_dc.collect(pred)
-    # return json.dumps(str(pred[0]))
-
-
+    
 def main():
     from azureml.api.schema.dataTypes import DataTypes
     from azureml.api.schema.sampleDefinition import SampleDefinition
