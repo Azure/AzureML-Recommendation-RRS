@@ -34,8 +34,8 @@ def init():
     import pydocumentdb.errors as errors
     import datetime
 
-    MASTER_KEY = 'oX6tWPep8FCah8RM258s7cC3x9Kl8tWdbDxmNknXCP34ShW1Ag1ladvb5QWuBmMxuRISBO2HfrRFv3QeJYCSYg=='
-    HOST = 'https://dcibrecommendationhack.documents.azure.com:443/'
+    MASTER_KEY = ''
+    HOST = 'https://[].documents.azure.com:443/'
     DATABASE_ID = "recommendation_engine"
     COLLECTION_ID = "user_recommendations"
     database_link = 'dbs/' + DATABASE_ID
